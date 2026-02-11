@@ -260,6 +260,26 @@ nav {
   width: 100%;
 }
 
+.lightbox-trigger {
+  display: block;
+  cursor: zoom-in;
+  text-decoration: none;
+}
+
+.lightbox-trigger img {
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-trigger:hover img {
+  filter: brightness(1.08);
+}
+
+.lightbox-trigger:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
 .hero-shot {
   max-height: min(62vh, 520px);
   object-fit: contain;
@@ -448,6 +468,62 @@ pre {
   margin: 0.35rem 0;
 }
 
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(2px);
+}
+
+.lightbox-figure {
+  margin: 0;
+  max-width: min(1300px, 94vw);
+}
+
+.lightbox-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 84vh;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.95);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+#lightbox-caption {
+  margin-top: 10px;
+  text-align: center;
+  color: #dbeafe;
+  font-size: 0.95rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(15, 23, 42, 0.78);
+  color: #f8fafc;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: rgba(30, 41, 59, 0.92);
+}
+
 .faq-list {
   max-width: 920px;
   margin: 1rem auto 0;
@@ -566,6 +642,14 @@ pre {
   .hero,
   .hero-compact {
     padding-top: 3rem;
+  }
+
+  .lightbox {
+    padding: 16px;
+  }
+
+  .lightbox-figure img {
+    max-height: 78vh;
   }
 }
 

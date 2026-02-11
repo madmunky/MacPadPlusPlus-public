@@ -26,26 +26,81 @@
     }
   }
 
-  var copyButton = document.getElementById("copy-template");
-  var copyState = document.getElementById("copy-state");
-  if (!copyButton || !copyState) {
-    return;
+  var lightbox = document.getElementById("image-lightbox");
+  var lightboxImage = document.getElementById("lightbox-image");
+  var lightboxCaption = document.getElementById("lightbox-caption");
+  var lightboxClose = document.getElementById("lightbox-close");
+  var lastFocusedNode = null;
+
+  if (lightbox && lightboxImage && lightboxCaption && lightboxClose) {
+    var closeLightbox = function () {
+      if (lightbox.hasAttribute("hidden")) {
+        return;
+      }
+      lightbox.setAttribute("hidden", "");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastFocusedNode && typeof lastFocusedNode.focus === "function") {
+        lastFocusedNode.focus();
+      }
+    };
+
+    var openLightbox = function (src, alt, triggerNode) {
+      if (!src) {
+        return;
+      }
+      lastFocusedNode = triggerNode || null;
+      lightboxImage.src = src;
+      lightboxImage.alt = alt || "Expanded screenshot";
+      lightboxCaption.textContent = alt || "";
+      lightbox.removeAttribute("hidden");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      lightboxClose.focus();
+    };
+
+    var triggerLinks = document.querySelectorAll("a[data-lightbox]");
+    triggerLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        var childImage = link.querySelector("img");
+        var altText = childImage ? childImage.alt : "Expanded screenshot";
+        openLightbox(link.getAttribute("href"), altText, link);
+      });
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
   }
 
-  var template = [
-    "- App version:",
-    "- macOS version:",
-    "- File type/size:",
-    "- Steps to reproduce:",
-    "- Expected result:",
-    "- Actual result:"
-  ].join("\n");
+  var copyButton = document.getElementById("copy-template");
+  var copyState = document.getElementById("copy-state");
+  if (copyButton && copyState) {
+    var template = [
+      "- App version:",
+      "- macOS version:",
+      "- File type/size:",
+      "- Steps to reproduce:",
+      "- Expected result:",
+      "- Actual result:"
+    ].join("\n");
 
-  copyButton.addEventListener("click", function () {
-    navigator.clipboard.writeText(template).then(function () {
-      copyState.textContent = "Template copied.";
-    }).catch(function () {
-      copyState.textContent = "Copy failed. Select text manually.";
+    copyButton.addEventListener("click", function () {
+      navigator.clipboard.writeText(template).then(function () {
+        copyState.textContent = "Template copied.";
+      }).catch(function () {
+        copyState.textContent = "Copy failed. Select text manually.";
+      });
     });
-  });
+  }
 })();
