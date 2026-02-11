@@ -296,12 +296,26 @@ nav {
 }
 
 .feature-icon {
-  font-size: 1.7rem;
+  width: 44px;
+  height: 44px;
   margin-bottom: 0.9rem;
-  display: inline-block;
-  padding: 0.66rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
+  border: 1px solid var(--glass-border);
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #dbeafe;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .feature-title {
@@ -386,6 +400,17 @@ nav {
   font-size: 1.02rem;
 }
 
+.feature-detail ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.feature-detail li {
+  color: #b8c5d6;
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
 .support-template {
   margin-top: 2.5rem;
   padding: 1.5rem;
@@ -411,6 +436,16 @@ pre {
   min-height: 1.2em;
   color: #93c5fd;
   margin-top: 8px;
+}
+
+.capability-list {
+  margin: 0 0 1.2rem;
+  padding-left: 1.1rem;
+}
+
+.capability-list li {
+  color: #b8c5d6;
+  margin: 0.35rem 0;
 }
 
 .faq-list {
