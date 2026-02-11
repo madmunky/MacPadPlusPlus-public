@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MacPadPlusPlus FAQ</title>
+  <meta name="description" content="Frequently asked questions for MacPadPlusPlus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="container">
+    <nav class="top-nav">
+      <a class="brand" href="./">MacPadPlusPlus</a>
+      <div class="nav-links">
+        <a href="./">Support</a>
+        <a href="./privacy.html">Privacy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero hero-compact">
+      <p class="eyebrow">FAQ</p>
+      <h1>Frequently Asked Questions</h1>
+      <p class="hero-copy">Answers to common setup, performance, and troubleshooting questions.</p>
+    </section>
+
+    <section class="faq-list">
+      <details open>
+        <summary>What files can MacPadPlusPlus open?</summary>
+        <p>MacPadPlusPlus is designed for plain text and log files, including very large logs.</p>
+      </details>
+      <details>
+        <summary>How do I improve performance on huge files?</summary>
+        <p>Open files directly from local storage, avoid heavy background tasks, and allow indexing to finish before searching repeatedly.</p>
+      </details>
+      <details>
+        <summary>Where are recent files and preferences stored?</summary>
+        <p>The app stores support files in your user Application Support directory under the app name.</p>
+      </details>
+      <details>
+        <summary>Does MacPadPlusPlus send my files to a server?</summary>
+        <p>No. Editing and search operations are local to your Mac.</p>
+      </details>
+      <details>
+        <summary>How do I report a crash or bug?</summary>
+        <p>Open a GitHub issue with your app version, macOS version, and exact repro steps.</p>
+        <p><a href="https://github.com/madmunky/MacPadPlusPlus-public/issues" target="_blank" rel="noreferrer">Open Support Issues</a></p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> MacPadPlusPlus</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

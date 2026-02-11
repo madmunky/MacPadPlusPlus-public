@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MacPadPlusPlus Support</title>
+  <meta name="description" content="Official support site for MacPadPlusPlus. Find help, report bugs, and read privacy details.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+  <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+  <header class="container">
+    <nav class="top-nav">
+      <a class="brand" href="./">MacPadPlusPlus</a>
+      <div class="nav-links">
+        <a href="./faq.html">FAQ</a>
+        <a href="./privacy.html">Privacy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Support Center</p>
+      <h1>Help for MacPadPlusPlus</h1>
+      <p class="hero-copy">
+        MacPadPlusPlus is a native macOS editor and large-file log viewer.
+        Use this page for support requests, troubleshooting, and policy details.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/madmunky/MacPadPlusPlus-public/issues/new?assignees=&labels=bug&projects=&template=bug_report.md" target="_blank" rel="noreferrer">Report a Bug</a>
+        <a class="btn btn-secondary" href="https://github.com/madmunky/MacPadPlusPlus-public/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md" target="_blank" rel="noreferrer">Request a Feature</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Common Fixes</h2>
+        <ul>
+          <li>Restart the app after changing language or theme settings.</li>
+          <li>For very large files, wait for indexing before searching.</li>
+          <li>If menus look stale, close and reopen the document tab.</li>
+          <li>Reopen recent files from <code>File &gt; Open Recent</code>.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Before You Contact Support</h2>
+        <ul>
+          <li>App version and macOS version</li>
+          <li>Exact steps to reproduce</li>
+          <li>Expected result vs. actual result</li>
+          <li>Sample file or screenshot if possible</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Links</h2>
+        <ul class="link-list">
+          <li><a href="./faq.html">Read the FAQ</a></li>
+          <li><a href="./privacy.html">Privacy Policy</a></li>
+          <li><a href="https://github.com/madmunky/MacPadPlusPlus-public/issues" target="_blank" rel="noreferrer">Support Issues</a></li>
+          <li><a href="https://github.com/madmunky/MacPadPlusPlus-public/releases" target="_blank" rel="noreferrer">Release Notes</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="support-template card">
+      <h2>Support Request Template</h2>
+      <p>Paste this into your issue report:</p>
+      <pre><code>- App version:
+- macOS version:
+- File type/size:
+- Steps to reproduce:
+- Expected result:
+- Actual result:</code></pre>
+      <button id="copy-template" class="btn btn-secondary" type="button">Copy Template</button>
+      <p id="copy-state" class="copy-state" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> MacPadPlusPlus</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
