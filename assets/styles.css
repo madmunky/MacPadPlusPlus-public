@@ -219,7 +219,7 @@ nav {
 }
 
 .mockup-container {
-  max-width: 1000px;
+  max-width: min(920px, 100%);
   margin: 0 auto 4rem;
   position: relative;
 }
@@ -258,7 +258,12 @@ nav {
 .detailed-card img {
   display: block;
   width: 100%;
-  height: auto;
+}
+
+.hero-shot {
+  max-height: min(62vh, 520px);
+  object-fit: contain;
+  background: rgba(2, 6, 23, 0.7);
 }
 
 .features {
@@ -313,6 +318,17 @@ nav {
   margin: 3.7rem auto;
 }
 
+.split-section .visual {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.split-section .visual img {
+  max-height: 360px;
+  object-fit: contain;
+  background: rgba(2, 6, 23, 0.7);
+}
+
 .split-reverse {
   direction: rtl;
 }
@@ -352,6 +368,15 @@ nav {
 .detailed-card,
 .shot-card {
   padding: 0.9rem;
+}
+
+.detailed-card img,
+.shot-card img {
+  height: clamp(160px, 18vw, 220px);
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: rgba(2, 6, 23, 0.7);
 }
 
 .detailed-card h3,
@@ -469,6 +494,19 @@ pre {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     margin: 2.3rem auto;
+  }
+
+  .hero-shot {
+    max-height: 46vh;
+  }
+
+  .split-section .visual img {
+    max-height: 300px;
+  }
+
+  .detailed-card img,
+  .shot-card img {
+    height: 180px;
   }
 
   .split-reverse {
