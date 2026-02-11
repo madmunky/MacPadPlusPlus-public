@@ -486,6 +486,16 @@ pre {
   margin-bottom: 0.4rem;
 }
 
+.policy ul {
+  margin: 0.25rem 0 1rem;
+  padding-left: 1.1rem;
+}
+
+.policy li {
+  color: #b8c5d6;
+  margin: 0.3rem 0;
+}
+
 .footer {
   border-top: 1px solid var(--glass-border);
   padding: 3rem 0;
